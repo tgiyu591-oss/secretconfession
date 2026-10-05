@@ -35,7 +35,13 @@ npm test
 
 ## Sharing with someone
 
-The link created in the app uses the address where the app is running. A `localhost` link only works on your own computer. To share links with someone elsewhere, deploy the app to a public HTTPS host, configure `SUPABASE_URL` and `SUPABASE_SERVICE_ROLE_KEY` as server-side environment variables there, and run the SQL schema in your Supabase project.
+The link created in the app uses the address where the app is running. A `localhost` link only works on your own computer.
+
+### Deploy on Render
+
+This repository includes a [`render.yaml`](./render.yaml) Blueprint for a Render web service. In Render, create a new Blueprint and connect `tgiyu591-oss/secretconfession`. Render will read the Blueprint and ask for `SUPABASE_SERVICE_ROLE_KEY`; enter the key as a secret environment variable in Render, not in GitHub. The project URL is included in the Blueprint. Ensure the `confessions` schema has been run in Supabase before creating confession links.
+
+The Blueprint uses Render's free plan, which may spin down after inactivity. The first visit after a spin-down can take a little while. After deployment, use the public `onrender.com` HTTPS URL for links rather than `localhost`.
 
 ## Privacy
 

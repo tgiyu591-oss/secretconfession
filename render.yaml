@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: hush-confessions
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: NODE_VERSION
+        value: "22"
+      - key: SUPABASE_URL
+        value: https://svfjtcvyuzdrfeqtjbwb.supabase.co
+      - key: SUPABASE_SERVICE_ROLE_KEY
+        sync: false
