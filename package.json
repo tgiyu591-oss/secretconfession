@@ -1,0 +1,13 @@
+{
+  "name": "secret-confession",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A small private-by-link confession website",
+  "engines": {
+    "node": ">=22.13.0"
+  },
+  "scripts": {
+    "start": "node --env-file-if-exists=.env server.js",
+    "test": "node --test"
+  }
+}

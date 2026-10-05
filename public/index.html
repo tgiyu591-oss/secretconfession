@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f5f0">
+    <meta name="description" content="A little space for words meant for one person.">
+    <title>A little secret — Hush</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="wordmark" href="/" aria-label="Hush home">
+          <span class="wordmark-icon" aria-hidden="true">h</span>
+          <span>hush<span class="wordmark-period">.</span></span>
+        </a>
+        <span class="topbar-note"><span class="status-dot"></span> A NOTE, JUST BETWEEN YOU</span>
+      </header>
+
+      <main>
+        <section class="composer-layout" id="composer-view">
+          <div class="composer">
+            <div class="eyebrow"><span class="eyebrow-line"></span> A QUIET LITTLE CORNER</div>
+            <h1>Some things are<br>easier <em>to say.</em></h1>
+            <p class="intro">Leave a thought for someone. We’ll make you a link to share.</p>
+
+            <form id="confession-form">
+              <label for="sender-name">From <span class="optional">· optional</span></label>
+              <input id="sender-name" name="senderName" type="text" maxlength="60" autocomplete="name" placeholder="A name, or leave it blank">
+
+              <div class="message-label-row">
+                <label for="message">Your confession</label>
+                <span class="character-count" id="character-count">0 / 2,000</span>
+              </div>
+              <textarea id="message" name="message" maxlength="2000" rows="6" required placeholder="Write what’s on your mind..."></textarea>
+
+              <p class="form-error" id="form-error" role="alert" hidden></p>
+              <button class="primary-button" id="create-button" type="submit">
+                <span>Create a private link</span>
+                <span class="button-arrow" aria-hidden="true">↗</span>
+              </button>
+            </form>
+            <p class="fine-print">No account needed <span>·</span> Your words stay off the public feed</p>
+          </div>
+
+          <aside class="privacy-card">
+            <div class="envelope-art" aria-hidden="true">
+              <div class="envelope-shadow"></div>
+              <div class="envelope">
+                <div class="envelope-paper"><span>just for you</span><i></i></div>
+                <div class="envelope-flap"></div>
+                <div class="envelope-seal">h</div>
+              </div>
+              <span class="sparkle sparkle-one">✳</span>
+              <span class="sparkle sparkle-two">✳</span>
+            </div>
+            <div class="privacy-copy">
+              <span class="card-kicker">A LITTLE PRIVACY NOTE</span>
+              <h2>Private by link,<br>not by password.</h2>
+              <p>Anyone with your link can read it. Share it only with the person you have in mind.</p>
+            </div>
+            <div class="card-foot"><span class="card-foot-icon">↗</span> Made for one meaningful moment</div>
+          </aside>
+        </section>
+
+        <section class="result-layout" id="result-view" hidden>
+          <div class="result-card">
+            <div class="eyebrow"><span class="eyebrow-line"></span> YOUR NOTE IS READY</div>
+            <h1>A little secret,<br><em>on its way.</em></h1>
+            <p class="intro">Copy this link and send it to the person you had in mind.</p>
+            <div class="share-box">
+              <input id="share-link" aria-label="Your private confession link" readonly>
+              <button class="copy-button" id="copy-button" type="button">Copy link</button>
+            </div>
+            <p class="form-error" id="copy-status" role="status" aria-live="polite"></p>
+            <button class="text-button" id="new-confession" type="button">← Write another note</button>
+            <p class="fine-print">Keep this link somewhere safe. Anyone who has it can read your note.</p>
+          </div>
+          <aside class="privacy-card result-aside">
+            <div class="envelope-art" aria-hidden="true">
+              <div class="envelope-shadow"></div>
+              <div class="envelope">
+                <div class="envelope-paper"><span>just for you</span><i></i></div>
+                <div class="envelope-flap"></div>
+                <div class="envelope-seal">h</div>
+              </div>
+              <span class="sparkle sparkle-one">✳</span>
+              <span class="sparkle sparkle-two">✳</span>
+            </div>
+            <div class="privacy-copy">
+              <span class="card-kicker">SMALL THING, BIG FEELING</span>
+              <h2>It’s the thought<br>that counts.</h2>
+              <p>A few honest words can mean more than you think.</p>
+            </div>
+            <div class="card-foot"><span class="card-foot-icon">♡</span> Sent with a little courage</div>
+          </aside>
+        </section>
+
+        <section class="letter-view" id="letter-view" hidden>
+          <div class="letter-card">
+            <div class="letter-stamp" aria-hidden="true">h</div>
+            <div class="eyebrow"><span class="eyebrow-line"></span> A NOTE FOR YOU</div>
+            <h1>Someone left<br><em>you a little something.</em></h1>
+            <div class="letter-body" id="letter-body"></div>
+            <p class="letter-signature" id="letter-signature" hidden></p>
+            <div class="letter-divider"><span>✳</span></div>
+            <a class="text-button" href="/">Leave a note of your own <span aria-hidden="true">↗</span></a>
+          </div>
+        </section>
+        <section class="letter-view" id="not-found-view" hidden>
+          <div class="letter-card not-found-card">
+            <div class="letter-stamp" aria-hidden="true">h</div>
+            <div class="eyebrow"><span class="eyebrow-line"></span> A LITTLE MYSTERY</div>
+            <h1>This note seems<br><em>to be missing.</em></h1>
+            <p class="intro">The link may be incomplete, or the note may no longer be available.</p>
+            <a class="primary-button link-button" href="/"><span>Write a note instead</span><span class="button-arrow" aria-hidden="true">↗</span></a>
+          </div>
+        </section>
+      </main>
+
+      <footer class="footer">
+        <span>hush<span class="wordmark-period">.</span> <span class="footer-separator">—</span> words meant for one person</span>
+        <span>TAKE A BREATH. THEN SEND IT.</span>
+      </footer>
+    </div>
+  </body>
+</html>
